@@ -1,0 +1,22 @@
+[
+  {
+    "name": "Aesthetic Lasers",
+    "slug": "aesthetic-lasers"
+  },
+  {
+    "name": "Cosmetic Lasers",
+    "slug": "cosmetic-lasers"
+  },
+  {
+    "name": "Face & Body Care",
+    "slug": "face-body-care"
+  },
+  {
+    "name": "Guides",
+    "slug": "guides"
+  },
+  {
+    "name": "Medical Lasers",
+    "slug": "medical-lasers"
+  }
+]

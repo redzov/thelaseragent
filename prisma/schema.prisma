@@ -1,0 +1,246 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Product {
+  id              Int               @id @default(autoincrement())
+  slug            String            @unique
+  title           String
+  description     String            @db.Text
+  longDescription String?           @db.Text
+  price           Decimal           @default(0)
+  callForPrice    Boolean           @default(true)
+  sku             String?
+  referenceNumber String?
+  manufacturer    String?
+  model           String?
+  year            Int?
+  applications    String?           @db.Text
+  systemIncludes  String?           @db.Text
+  status          ProductStatus     @default(ACTIVE)
+  featured        Boolean           @default(false)
+  isDeal          Boolean           @default(false)
+  metaTitle       String?
+  metaDescription String?           @db.Text
+  ogImage         String?
+  sortOrder       Int               @default(0)
+  createdAt       DateTime          @default(now())
+  updatedAt       DateTime          @updatedAt
+
+  images          ProductImage[]
+  categories      ProductCategory[]
+  relatedTo       ProductRelation[] @relation("relatedFrom")
+  relatedFrom     ProductRelation[] @relation("relatedTo")
+  orderItems      OrderItem[]
+
+  @@index([manufacturer])
+  @@index([year])
+  @@index([status])
+  @@index([isDeal])
+}
+
+enum ProductStatus {
+  ACTIVE
+  SOLD
+  ARCHIVED
+}
+
+model ProductImage {
+  id        Int     @id @default(autoincrement())
+  productId Int
+  url       String
+  alt       String  @default("")
+  sortOrder Int     @default(0)
+  isPrimary Boolean @default(false)
+
+  product Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  @@index([productId])
+}
+
+model ProductRelation {
+  id            Int @id @default(autoincrement())
+  fromProductId Int
+  toProductId   Int
+
+  fromProduct Product @relation("relatedFrom", fields: [fromProductId], references: [id], onDelete: Cascade)
+  toProduct   Product @relation("relatedTo", fields: [toProductId], references: [id], onDelete: Cascade)
+
+  @@unique([fromProductId, toProductId])
+}
+
+model Category {
+  id              Int               @id @default(autoincrement())
+  slug            String            @unique
+  name            String
+  type            CategoryType
+  description     String?           @db.Text
+  metaTitle       String?
+  metaDescription String?           @db.Text
+  heroImage       String?
+  sortOrder       Int               @default(0)
+  parentId        Int?
+
+  parent   Category?         @relation("CategoryTree", fields: [parentId], references: [id])
+  children Category[]        @relation("CategoryTree")
+  products ProductCategory[]
+
+  @@index([type])
+  @@index([parentId])
+}
+
+enum CategoryType {
+  PRODUCT_TYPE
+  LASER_TYPE
+  BRAND
+  APPLICATION
+}
+
+model ProductCategory {
+  productId  Int
+  categoryId Int
+
+  product  Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  category Category @relation(fields: [categoryId], references: [id], onDelete: Cascade)
+
+  @@id([productId, categoryId])
+}
+
+model Article {
+  id              Int             @id @default(autoincrement())
+  slug            String          @unique
+  title           String
+  excerpt         String?         @db.Text
+  body            String          @db.Text
+  featuredImage   String?
+  author          String          @default("The Laser Agent")
+  publishedAt     DateTime
+  updatedAt       DateTime        @updatedAt
+  metaTitle       String?
+  metaDescription String?         @db.Text
+  ogImage         String?
+
+  categories      ArticleCategory[]
+
+  @@index([publishedAt(sort: Desc)])
+}
+
+model BlogCategory {
+  id       Int               @id @default(autoincrement())
+  slug     String            @unique
+  name     String
+
+  articles ArticleCategory[]
+}
+
+model ArticleCategory {
+  articleId      Int
+  blogCategoryId Int
+
+  article      Article      @relation(fields: [articleId], references: [id], onDelete: Cascade)
+  blogCategory BlogCategory @relation(fields: [blogCategoryId], references: [id], onDelete: Cascade)
+
+  @@id([articleId, blogCategoryId])
+}
+
+model FaqItem {
+  id        Int    @id @default(autoincrement())
+  question  String
+  answer    String @db.Text
+  section   String @default("General")
+  sortOrder Int    @default(0)
+}
+
+model TeamMember {
+  id        Int     @id @default(autoincrement())
+  name      String
+  title     String
+  photo     String?
+  bio       String? @db.Text
+  sortOrder Int     @default(0)
+}
+
+model Review {
+  id          Int       @id @default(autoincrement())
+  authorName  String
+  authorImage String?
+  rating      Int       @default(5)
+  text        String    @db.Text
+  source      String    @default("google")
+  reviewDate  DateTime?
+  sortOrder   Int       @default(0)
+}
+
+model StaticPage {
+  id              Int    @id @default(autoincrement())
+  slug            String @unique
+  title           String
+  body            String @db.Text
+  metaTitle       String?
+  metaDescription String? @db.Text
+}
+
+model Order {
+  id              Int         @id @default(autoincrement())
+  stripeSessionId String?     @unique
+  stripePaymentId String?
+  customerEmail   String
+  customerName    String
+  customerPhone   String?
+  shippingAddress Json?
+  billingAddress  Json?
+  subtotal        Decimal
+  shipping        Decimal     @default(0)
+  tax             Decimal     @default(0)
+  total           Decimal
+  status          OrderStatus @default(PENDING)
+  notes           String?     @db.Text
+  createdAt       DateTime    @default(now())
+  updatedAt       DateTime    @updatedAt
+
+  items OrderItem[]
+
+  @@index([status])
+  @@index([customerEmail])
+}
+
+enum OrderStatus {
+  PENDING
+  PAID
+  PROCESSING
+  SHIPPED
+  DELIVERED
+  CANCELLED
+  REFUNDED
+}
+
+model OrderItem {
+  id        Int     @id @default(autoincrement())
+  orderId   Int
+  productId Int
+  quantity  Int     @default(1)
+  price     Decimal
+
+  order   Order   @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  product Product @relation(fields: [productId], references: [id])
+
+  @@index([orderId])
+}
+
+model FormSubmission {
+  id          Int      @id @default(autoincrement())
+  formType    String
+  data        Json
+  productSlug String?
+  email       String?
+  createdAt   DateTime @default(now())
+  read        Boolean  @default(false)
+
+  @@index([formType])
+  @@index([createdAt(sort: Desc)])
+}
