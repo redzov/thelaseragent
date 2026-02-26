@@ -5,13 +5,17 @@ import { PRODUCTS_PER_PAGE } from "@/lib/constants";
 // ---- Helpers ----
 
 function resolveImageUrl(url: string, slug: string): string {
-  // Admin-uploaded images already have correct paths
-  if (url.startsWith("/uploads/") || url.startsWith("/images/")) {
-    return url;
+  // Already an absolute URL
+  if (url.startsWith("http")) return url;
+  // Admin-uploaded images exist locally
+  if (url.startsWith("/uploads/")) return url;
+  // Product images served from external CDN (excluded from Vercel deploy)
+  if (url.startsWith("/images/")) {
+    return `https://www.thelaseragent.com${url}`;
   }
-  // Seeded images from JSON: transform to local path
+  // Seeded images from JSON: build external URL
   const filename = url.split("/").pop() || "image.jpg";
-  return `/images/products/${slug}/${filename}`;
+  return `https://www.thelaseragent.com/images/products/${slug}/${filename}`;
 }
 
 // ---- Public API ----
