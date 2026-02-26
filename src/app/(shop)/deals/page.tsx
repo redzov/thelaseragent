@@ -78,7 +78,7 @@ export default async function DealsPage({ searchParams }: PageProps) {
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
               Deals & Special Offers
             </h1>
-            <span className="px-3 py-1 bg-[#5ABA47]/20 text-[#5ABA47] text-sm font-semibold rounded-full">
+            <span className="px-3 py-1 bg-[#2196F3]/20 text-[#2196F3] text-sm font-semibold rounded-full">
               SAVE
             </span>
           </div>

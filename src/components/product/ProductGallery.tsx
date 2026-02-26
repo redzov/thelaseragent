@@ -80,7 +80,7 @@ export default function ProductGallery({ images }: ProductGalleryProps) {
               onClick={() => handleThumbnailClick(index)}
               className={`relative flex-shrink-0 w-16 h-16 sm:w-20 sm:h-20 rounded-md overflow-hidden border-2 transition-all duration-200 ${
                 index === selectedIndex
-                  ? "border-[#5ABA47] opacity-100"
+                  ? "border-[#2196F3] opacity-100"
                   : "border-transparent opacity-60 hover:opacity-100"
               }`}
               aria-label={`View image ${index + 1}`}

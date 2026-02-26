@@ -18,7 +18,7 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
       {/* Price */}
       <div className="mb-6">
         {product.callForPrice || product.price === 0 ? (
-          <span className="text-2xl font-semibold text-[#5ABA47]">
+          <span className="text-2xl font-semibold text-[#2196F3]">
             Call for Price
           </span>
         ) : (
@@ -151,7 +151,7 @@ export default function ProductDetails({ product }: ProductDetailsProps) {
             {categoryNames.map((name) => (
               <span
                 key={name}
-                className="px-3 py-1.5 text-xs font-medium text-[#5ABA47] bg-[#5ABA47]/10 border border-[#5ABA47]/20 rounded-full"
+                className="px-3 py-1.5 text-xs font-medium text-[#2196F3] bg-[#2196F3]/10 border border-[#2196F3]/20 rounded-full"
               >
                 {name}
               </span>

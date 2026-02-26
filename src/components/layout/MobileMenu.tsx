@@ -31,7 +31,7 @@ function AccordionItem({ item, onClose }: { item: NavItem; onClose: () => void }
       <Link
         href={item.href}
         onClick={onClose}
-        className="block px-6 py-3 text-[15px] font-medium text-white hover:text-[#5ABA47] border-b border-[#222] transition-colors"
+        className="block px-6 py-3 text-[15px] font-medium text-white hover:text-[#2196F3] border-b border-[#222] transition-colors"
       >
         {item.label}
       </Link>
@@ -42,7 +42,7 @@ function AccordionItem({ item, onClose }: { item: NavItem; onClose: () => void }
     <div className="border-b border-[#222]">
       <button
         onClick={() => setIsExpanded(!isExpanded)}
-        className="w-full flex items-center justify-between px-6 py-3 text-[15px] font-medium text-white hover:text-[#5ABA47] transition-colors"
+        className="w-full flex items-center justify-between px-6 py-3 text-[15px] font-medium text-white hover:text-[#2196F3] transition-colors"
       >
         <span>{item.label}</span>
         <ChevronDown
@@ -68,7 +68,7 @@ function AccordionItem({ item, onClose }: { item: NavItem; onClose: () => void }
                     key={subItem.href}
                     href={subItem.href}
                     onClick={onClose}
-                    className="block px-10 py-2 text-sm text-gray-300 hover:text-[#5ABA47] transition-colors"
+                    className="block px-10 py-2 text-sm text-gray-300 hover:text-[#2196F3] transition-colors"
                   >
                     {subItem.label}
                   </Link>
@@ -81,7 +81,7 @@ function AccordionItem({ item, onClose }: { item: NavItem; onClose: () => void }
                 key={subItem.href}
                 href={subItem.href}
                 onClick={onClose}
-                className="block px-10 py-2 text-sm text-gray-300 hover:text-[#5ABA47] transition-colors"
+                className="block px-10 py-2 text-sm text-gray-300 hover:text-[#2196F3] transition-colors"
               >
                 {subItem.label}
               </Link>
@@ -103,7 +103,7 @@ export default function MobileMenu() {
       {/* Hamburger Button */}
       <button
         onClick={() => setIsOpen(true)}
-        className="p-2 text-gray-700 hover:text-[#5ABA47] transition-colors"
+        className="p-2 text-gray-700 hover:text-[#2196F3] transition-colors"
         aria-label="Open menu"
       >
         <Menu className="w-6 h-6" />

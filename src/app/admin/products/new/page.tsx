@@ -108,7 +108,7 @@ export default function AdminProductNewPage() {
                   }
                 }}
                 required
-                className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm text-gray-900 focus:border-[#5ABA47] focus:outline-none focus:ring-1 focus:ring-[#5ABA47]"
+                className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm text-gray-900 focus:border-[#2196F3] focus:outline-none focus:ring-1 focus:ring-[#2196F3]"
               />
             </div>
             <div>
@@ -120,7 +120,7 @@ export default function AdminProductNewPage() {
                 value={form.slug}
                 onChange={(e) => updateField("slug", e.target.value)}
                 required
-                className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm text-gray-900 focus:border-[#5ABA47] focus:outline-none focus:ring-1 focus:ring-[#5ABA47]"
+                className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm text-gray-900 focus:border-[#2196F3] focus:outline-none focus:ring-1 focus:ring-[#2196F3]"
               />
             </div>
             <div>
@@ -131,7 +131,7 @@ export default function AdminProductNewPage() {
                 type="text"
                 value={form.manufacturer}
                 onChange={(e) => updateField("manufacturer", e.target.value)}
-                className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm text-gray-900 focus:border-[#5ABA47] focus:outline-none focus:ring-1 focus:ring-[#5ABA47]"
+                className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm text-gray-900 focus:border-[#2196F3] focus:outline-none focus:ring-1 focus:ring-[#2196F3]"
               />
             </div>
             <div>
@@ -142,7 +142,7 @@ export default function AdminProductNewPage() {
                 type="text"
                 value={form.model}
                 onChange={(e) => updateField("model", e.target.value)}
-                className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm text-gray-900 focus:border-[#5ABA47] focus:outline-none focus:ring-1 focus:ring-[#5ABA47]"
+                className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm text-gray-900 focus:border-[#2196F3] focus:outline-none focus:ring-1 focus:ring-[#2196F3]"
               />
             </div>
             <div>
@@ -154,7 +154,7 @@ export default function AdminProductNewPage() {
                 step="0.01"
                 value={form.price}
                 onChange={(e) => updateField("price", e.target.value)}
-                className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm text-gray-900 focus:border-[#5ABA47] focus:outline-none focus:ring-1 focus:ring-[#5ABA47]"
+                className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm text-gray-900 focus:border-[#2196F3] focus:outline-none focus:ring-1 focus:ring-[#2196F3]"
               />
             </div>
             <div>
@@ -165,7 +165,7 @@ export default function AdminProductNewPage() {
                 type="number"
                 value={form.year}
                 onChange={(e) => updateField("year", e.target.value)}
-                className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm text-gray-900 focus:border-[#5ABA47] focus:outline-none focus:ring-1 focus:ring-[#5ABA47]"
+                className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm text-gray-900 focus:border-[#2196F3] focus:outline-none focus:ring-1 focus:ring-[#2196F3]"
               />
             </div>
             <div>
@@ -176,7 +176,7 @@ export default function AdminProductNewPage() {
                 type="text"
                 value={form.sku}
                 onChange={(e) => updateField("sku", e.target.value)}
-                className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm text-gray-900 focus:border-[#5ABA47] focus:outline-none focus:ring-1 focus:ring-[#5ABA47]"
+                className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm text-gray-900 focus:border-[#2196F3] focus:outline-none focus:ring-1 focus:ring-[#2196F3]"
               />
             </div>
             <div>
@@ -187,7 +187,7 @@ export default function AdminProductNewPage() {
                 type="text"
                 value={form.referenceNumber}
                 onChange={(e) => updateField("referenceNumber", e.target.value)}
-                className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm text-gray-900 focus:border-[#5ABA47] focus:outline-none focus:ring-1 focus:ring-[#5ABA47]"
+                className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm text-gray-900 focus:border-[#2196F3] focus:outline-none focus:ring-1 focus:ring-[#2196F3]"
               />
             </div>
             <div>
@@ -197,7 +197,7 @@ export default function AdminProductNewPage() {
               <select
                 value={form.status}
                 onChange={(e) => updateField("status", e.target.value)}
-                className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm text-gray-900 focus:border-[#5ABA47] focus:outline-none focus:ring-1 focus:ring-[#5ABA47]"
+                className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm text-gray-900 focus:border-[#2196F3] focus:outline-none focus:ring-1 focus:ring-[#2196F3]"
               >
                 <option value="ACTIVE">Active</option>
                 <option value="SOLD">Sold</option>
@@ -212,7 +212,7 @@ export default function AdminProductNewPage() {
                 type="checkbox"
                 checked={form.callForPrice}
                 onChange={(e) => updateField("callForPrice", e.target.checked)}
-                className="h-4 w-4 rounded border-gray-300 text-[#5ABA47] focus:ring-[#5ABA47]"
+                className="h-4 w-4 rounded border-gray-300 text-[#2196F3] focus:ring-[#2196F3]"
               />
               Call for Price
             </label>
@@ -221,7 +221,7 @@ export default function AdminProductNewPage() {
                 type="checkbox"
                 checked={form.featured}
                 onChange={(e) => updateField("featured", e.target.checked)}
-                className="h-4 w-4 rounded border-gray-300 text-[#5ABA47] focus:ring-[#5ABA47]"
+                className="h-4 w-4 rounded border-gray-300 text-[#2196F3] focus:ring-[#2196F3]"
               />
               Featured
             </label>
@@ -230,7 +230,7 @@ export default function AdminProductNewPage() {
                 type="checkbox"
                 checked={form.isDeal}
                 onChange={(e) => updateField("isDeal", e.target.checked)}
-                className="h-4 w-4 rounded border-gray-300 text-[#5ABA47] focus:ring-[#5ABA47]"
+                className="h-4 w-4 rounded border-gray-300 text-[#2196F3] focus:ring-[#2196F3]"
               />
               Is Deal
             </label>
@@ -252,7 +252,7 @@ export default function AdminProductNewPage() {
                 onChange={(e) => updateField("description", e.target.value)}
                 required
                 rows={3}
-                className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm text-gray-900 focus:border-[#5ABA47] focus:outline-none focus:ring-1 focus:ring-[#5ABA47]"
+                className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm text-gray-900 focus:border-[#2196F3] focus:outline-none focus:ring-1 focus:ring-[#2196F3]"
               />
             </div>
             <div>
@@ -263,7 +263,7 @@ export default function AdminProductNewPage() {
                 value={form.longDescription}
                 onChange={(e) => updateField("longDescription", e.target.value)}
                 rows={8}
-                className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm text-gray-900 focus:border-[#5ABA47] focus:outline-none focus:ring-1 focus:ring-[#5ABA47]"
+                className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm text-gray-900 focus:border-[#2196F3] focus:outline-none focus:ring-1 focus:ring-[#2196F3]"
               />
             </div>
             <div>
@@ -274,7 +274,7 @@ export default function AdminProductNewPage() {
                 value={form.applications}
                 onChange={(e) => updateField("applications", e.target.value)}
                 rows={3}
-                className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm text-gray-900 focus:border-[#5ABA47] focus:outline-none focus:ring-1 focus:ring-[#5ABA47]"
+                className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm text-gray-900 focus:border-[#2196F3] focus:outline-none focus:ring-1 focus:ring-[#2196F3]"
               />
             </div>
             <div>
@@ -285,7 +285,7 @@ export default function AdminProductNewPage() {
                 value={form.systemIncludes}
                 onChange={(e) => updateField("systemIncludes", e.target.value)}
                 rows={3}
-                className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm text-gray-900 focus:border-[#5ABA47] focus:outline-none focus:ring-1 focus:ring-[#5ABA47]"
+                className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm text-gray-900 focus:border-[#2196F3] focus:outline-none focus:ring-1 focus:ring-[#2196F3]"
               />
             </div>
           </div>
@@ -303,7 +303,7 @@ export default function AdminProductNewPage() {
                 type="text"
                 value={form.metaTitle}
                 onChange={(e) => updateField("metaTitle", e.target.value)}
-                className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm text-gray-900 focus:border-[#5ABA47] focus:outline-none focus:ring-1 focus:ring-[#5ABA47]"
+                className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm text-gray-900 focus:border-[#2196F3] focus:outline-none focus:ring-1 focus:ring-[#2196F3]"
               />
             </div>
             <div>
@@ -314,7 +314,7 @@ export default function AdminProductNewPage() {
                 value={form.metaDescription}
                 onChange={(e) => updateField("metaDescription", e.target.value)}
                 rows={2}
-                className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm text-gray-900 focus:border-[#5ABA47] focus:outline-none focus:ring-1 focus:ring-[#5ABA47]"
+                className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm text-gray-900 focus:border-[#2196F3] focus:outline-none focus:ring-1 focus:ring-[#2196F3]"
               />
             </div>
           </div>
@@ -325,7 +325,7 @@ export default function AdminProductNewPage() {
           <button
             type="submit"
             disabled={saving}
-            className="inline-flex items-center gap-2 rounded-md bg-[#5ABA47] px-6 py-2.5 text-sm font-medium text-white transition-colors hover:bg-[#348923] disabled:opacity-50"
+            className="inline-flex items-center gap-2 rounded-md bg-[#2196F3] px-6 py-2.5 text-sm font-medium text-white transition-colors hover:bg-[#1976D2] disabled:opacity-50"
           >
             <Save size={16} />
             {saving ? "Creating..." : "Create Product"}

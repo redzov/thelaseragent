@@ -72,7 +72,7 @@ export default function HomeContactForm() {
               value={name}
               onChange={(e) => setName(e.target.value)}
               required
-              className="w-full px-4 py-3 rounded-lg bg-[#0d0d0d] border border-[#333] text-white placeholder:text-[#666] focus:outline-none focus:border-[#5ABA47] transition-colors"
+              className="w-full px-4 py-3 rounded-lg bg-[#0d0d0d] border border-[#333] text-white placeholder:text-[#666] focus:outline-none focus:border-[#2196F3] transition-colors"
             />
           </div>
 
@@ -87,7 +87,7 @@ export default function HomeContactForm() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
-              className="w-full px-4 py-3 rounded-lg bg-[#0d0d0d] border border-[#333] text-white placeholder:text-[#666] focus:outline-none focus:border-[#5ABA47] transition-colors"
+              className="w-full px-4 py-3 rounded-lg bg-[#0d0d0d] border border-[#333] text-white placeholder:text-[#666] focus:outline-none focus:border-[#2196F3] transition-colors"
             />
           </div>
 
@@ -106,7 +106,7 @@ export default function HomeContactForm() {
           <div
             className={`mt-4 p-3 rounded-lg text-center text-sm ${
               message.type === "success"
-                ? "bg-[#5ABA47]/10 text-[#5ABA47]"
+                ? "bg-[#2196F3]/10 text-[#2196F3]"
                 : "bg-red-500/10 text-red-400"
             }`}
           >

@@ -41,10 +41,10 @@ function AccordionRow({
         className="w-full flex items-center justify-between py-5 px-1 text-left cursor-pointer group"
         aria-expanded={isOpen}
       >
-        <span className="text-white font-medium pr-4 group-hover:text-[#5ABA47] transition-colors">
+        <span className="text-white font-medium pr-4 group-hover:text-[#2196F3] transition-colors">
           {item.question}
         </span>
-        <span className="flex-shrink-0 text-[#5ABA47]">
+        <span className="flex-shrink-0 text-[#2196F3]">
           {isOpen ? <Minus size={20} /> : <Plus size={20} />}
         </span>
       </button>

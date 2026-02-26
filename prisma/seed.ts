@@ -273,6 +273,7 @@ async function clearDatabase() {
   await prisma.blogCategory.deleteMany();
   await prisma.product.deleteMany();
   await prisma.category.deleteMany();
+  await prisma.siteSettings.deleteMany();
 
   console.log("  All tables cleared.");
 }
@@ -589,12 +590,20 @@ async function seedReviews() {
   console.log("Seeding reviews...");
   const raw = readJSON<RawReviewsFile>("reviews.json");
 
+  const reviewPhotos: Record<number, string> = {
+    0: "/images/reviews/review-1.jpg",
+    1: "/images/reviews/review-2.jpg",
+    2: "/images/reviews/review-3.jpg",
+    3: "/images/reviews/review-4.jpg",
+  };
+
   for (let i = 0; i < raw.reviews.length; i++) {
     const r = raw.reviews[i];
     await prisma.review.create({
       data: {
         authorName: r.authorName,
         authorImage: r.avatarUrl || null,
+        photo: reviewPhotos[i] || null,
         rating: r.rating,
         text: r.text,
         source: "google",
@@ -626,6 +635,25 @@ async function seedStaticPages() {
   }
 
   console.log(`  Seeded ${raw.length} static pages.`);
+}
+
+async function seedSiteSettings() {
+  console.log("Seeding site settings...");
+
+  const settings = [
+    { key: "PHONE_PRIMARY", value: "(315) 280-9444" },
+    { key: "ADDRESS", value: "28 Liberty St, New York, 10005" },
+  ];
+
+  for (const s of settings) {
+    await prisma.siteSettings.upsert({
+      where: { key: s.key },
+      update: { value: s.value },
+      create: { key: s.key, value: s.value },
+    });
+  }
+
+  console.log(`  Seeded ${settings.length} site settings.`);
 }
 
 // ---------------------------------------------------------------------------
@@ -673,6 +701,9 @@ async function main() {
 
   // 12. Static pages (no dependencies)
   await seedStaticPages();
+
+  // 13. Site settings (no dependencies)
+  await seedSiteSettings();
 
   console.log("\n=== Seed complete! ===");
 }

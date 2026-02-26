@@ -77,8 +77,8 @@ export default function WhyChooseUsSection() {
               <div key={benefit.title} className="text-center">
                 {/* Icon */}
                 <div className="flex justify-center mb-4">
-                  <div className="w-14 h-14 rounded-full bg-[#5ABA47]/10 flex items-center justify-center">
-                    <Icon className="w-7 h-7 text-[#5ABA47]" strokeWidth={1.5} />
+                  <div className="w-14 h-14 rounded-full bg-[#2196F3]/10 flex items-center justify-center">
+                    <Icon className="w-7 h-7 text-[#2196F3]" strokeWidth={1.5} />
                   </div>
                 </div>
 

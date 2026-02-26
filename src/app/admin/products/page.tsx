@@ -89,7 +89,7 @@ export default function AdminProductsPage() {
         <h2 className="text-2xl font-bold text-gray-900">Products</h2>
         <Link
           href="/admin/products/new"
-          className="inline-flex items-center gap-2 rounded-md bg-[#5ABA47] px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-[#348923]"
+          className="inline-flex items-center gap-2 rounded-md bg-[#2196F3] px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-[#1976D2]"
         >
           <Plus size={16} />
           Add Product
@@ -108,7 +108,7 @@ export default function AdminProductsPage() {
             placeholder="Search products..."
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            className="w-full rounded-md border border-gray-300 py-2 pl-10 pr-4 text-sm text-gray-900 placeholder-gray-400 focus:border-[#5ABA47] focus:outline-none focus:ring-1 focus:ring-[#5ABA47]"
+            className="w-full rounded-md border border-gray-300 py-2 pl-10 pr-4 text-sm text-gray-900 placeholder-gray-400 focus:border-[#2196F3] focus:outline-none focus:ring-1 focus:ring-[#2196F3]"
           />
         </div>
       </form>
@@ -117,7 +117,7 @@ export default function AdminProductsPage() {
       <div className="overflow-hidden rounded-lg bg-white shadow-sm">
         {loading ? (
           <div className="flex h-48 items-center justify-center">
-            <div className="h-8 w-8 animate-spin rounded-full border-4 border-[#5ABA47] border-t-transparent" />
+            <div className="h-8 w-8 animate-spin rounded-full border-4 border-[#2196F3] border-t-transparent" />
           </div>
         ) : (
           <>

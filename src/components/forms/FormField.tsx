@@ -34,7 +34,7 @@ interface SelectFieldProps extends BaseFieldProps {
 type FormFieldProps = InputFieldProps | TextareaFieldProps | SelectFieldProps;
 
 const baseInputClasses =
-  "w-full px-4 py-3 rounded-lg bg-[#1a1a1a] border border-[#333] text-white placeholder:text-[#666] focus:outline-none focus:border-[#5ABA47] transition-colors";
+  "w-full px-4 py-3 rounded-lg bg-[#1a1a1a] border border-[#333] text-white placeholder:text-[#666] focus:outline-none focus:border-[#2196F3] transition-colors";
 
 export default function FormField(props: FormFieldProps) {
   const { label, name, error, required, type = "text", placeholder } = props;
@@ -45,7 +45,7 @@ export default function FormField(props: FormFieldProps) {
     <div>
       <label htmlFor={id} className="block text-sm font-medium text-[#c9c9c9] mb-1.5">
         {label}
-        {required && <span className="text-[#5ABA47] ml-1">*</span>}
+        {required && <span className="text-[#2196F3] ml-1">*</span>}
       </label>
 
       {type === "textarea" ? (

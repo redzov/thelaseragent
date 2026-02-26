@@ -122,14 +122,14 @@ export default function TestimonialsSlider() {
           {/* Navigation arrows */}
           <button
             onClick={scrollPrev}
-            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 w-10 h-10 rounded-full bg-[#1a1a1a] border border-[#333] flex items-center justify-center text-white hover:bg-[#5ABA47] hover:border-[#5ABA47] transition-colors cursor-pointer hidden md:flex"
+            className="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-4 w-10 h-10 rounded-full bg-[#1a1a1a] border border-[#333] flex items-center justify-center text-white hover:bg-[#2196F3] hover:border-[#2196F3] transition-colors cursor-pointer hidden md:flex"
             aria-label="Previous review"
           >
             <ChevronLeft className="w-5 h-5" />
           </button>
           <button
             onClick={scrollNext}
-            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 w-10 h-10 rounded-full bg-[#1a1a1a] border border-[#333] flex items-center justify-center text-white hover:bg-[#5ABA47] hover:border-[#5ABA47] transition-colors cursor-pointer hidden md:flex"
+            className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-4 w-10 h-10 rounded-full bg-[#1a1a1a] border border-[#333] flex items-center justify-center text-white hover:bg-[#2196F3] hover:border-[#2196F3] transition-colors cursor-pointer hidden md:flex"
             aria-label="Next review"
           >
             <ChevronRight className="w-5 h-5" />

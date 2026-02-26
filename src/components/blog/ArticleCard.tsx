@@ -38,7 +38,7 @@ export default function ArticleCard({
 
   return (
     <Link href={`/article/${slug}`} className="group block">
-      <article className="bg-[#1a1a1a] rounded-lg overflow-hidden border border-transparent transition-all duration-300 group-hover:scale-[1.02] group-hover:border-[#5ABA47]/40 group-hover:shadow-[0_0_20px_rgba(90,186,71,0.15)] h-full flex flex-col">
+      <article className="bg-[#1a1a1a] rounded-lg overflow-hidden border border-transparent transition-all duration-300 group-hover:scale-[1.02] group-hover:border-[#2196F3]/40 group-hover:shadow-[0_0_20px_rgba(90,186,71,0.15)] h-full flex flex-col">
         {/* Featured Image */}
         <div className="relative aspect-[16/9] bg-[#111] overflow-hidden">
           {featuredImage ? (
@@ -73,7 +73,7 @@ export default function ArticleCard({
           {/* Categories + Date */}
           <div className="flex items-center gap-3 mb-3 text-xs">
             {categories.length > 0 && (
-              <span className="text-[#5ABA47] font-medium uppercase tracking-wide">
+              <span className="text-[#2196F3] font-medium uppercase tracking-wide">
                 {categories[0].blogCategory.name}
               </span>
             )}
@@ -81,7 +81,7 @@ export default function ArticleCard({
           </div>
 
           {/* Title */}
-          <h3 className="text-white text-base font-semibold leading-snug line-clamp-2 mb-3 min-h-[2.75rem] group-hover:text-[#5ABA47] transition-colors">
+          <h3 className="text-white text-base font-semibold leading-snug line-clamp-2 mb-3 min-h-[2.75rem] group-hover:text-[#2196F3] transition-colors">
             {displayTitle}
           </h3>
 
@@ -94,7 +94,7 @@ export default function ArticleCard({
 
           {/* CTA */}
           <div className="mt-auto pt-3 border-t border-[#333]">
-            <span className="text-[#5ABA47] text-sm font-medium group-hover:underline inline-flex items-center gap-1">
+            <span className="text-[#2196F3] text-sm font-medium group-hover:underline inline-flex items-center gap-1">
               Read More
               <svg
                 className="w-4 h-4 transition-transform group-hover:translate-x-1"

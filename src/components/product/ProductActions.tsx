@@ -68,7 +68,7 @@ export default function ProductActions({ product }: ProductActionsProps) {
   };
 
   const inputClassName =
-    "bg-[#111] border border-[#333] rounded text-white px-4 py-3 w-full focus:border-[#5ABA47] focus:outline-none transition-colors placeholder:text-gray-600";
+    "bg-[#111] border border-[#333] rounded text-white px-4 py-3 w-full focus:border-[#2196F3] focus:outline-none transition-colors placeholder:text-gray-600";
   const labelClassName =
     "block uppercase text-xs font-semibold text-gray-400 tracking-wider mb-1.5";
 
@@ -162,7 +162,7 @@ export default function ProductActions({ product }: ProductActionsProps) {
         <button
           type="submit"
           disabled={isSubmitting}
-          className="bg-[#5ABA47] hover:bg-[#4ea93d] text-white font-semibold py-3 px-8 rounded transition-colors w-full uppercase tracking-wider disabled:opacity-50 disabled:cursor-not-allowed"
+          className="bg-[#2196F3] hover:bg-[#4ea93d] text-white font-semibold py-3 px-8 rounded transition-colors w-full uppercase tracking-wider disabled:opacity-50 disabled:cursor-not-allowed"
         >
           {isSubmitting ? "Sending..." : "SEND REQUEST"}
         </button>

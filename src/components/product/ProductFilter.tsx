@@ -70,7 +70,7 @@ export default function ProductFilter({
             id="filter-brand"
             value={brand}
             onChange={(e) => setBrand(e.target.value)}
-            className="w-full bg-[#111] border border-[#333] rounded-md px-3 py-2 text-sm text-white focus:outline-none focus:border-[#5ABA47] transition-colors"
+            className="w-full bg-[#111] border border-[#333] rounded-md px-3 py-2 text-sm text-white focus:outline-none focus:border-[#2196F3] transition-colors"
           >
             <option value="">All Brands</option>
             {sortedManufacturers.map((m) => (
@@ -93,7 +93,7 @@ export default function ProductFilter({
             id="filter-year-from"
             value={yearFrom}
             onChange={(e) => setYearFrom(e.target.value)}
-            className="w-full bg-[#111] border border-[#333] rounded-md px-3 py-2 text-sm text-white focus:outline-none focus:border-[#5ABA47] transition-colors"
+            className="w-full bg-[#111] border border-[#333] rounded-md px-3 py-2 text-sm text-white focus:outline-none focus:border-[#2196F3] transition-colors"
           >
             <option value="">Any</option>
             {sortedYears.map((y) => (
@@ -116,7 +116,7 @@ export default function ProductFilter({
             id="filter-year-to"
             value={yearTo}
             onChange={(e) => setYearTo(e.target.value)}
-            className="w-full bg-[#111] border border-[#333] rounded-md px-3 py-2 text-sm text-white focus:outline-none focus:border-[#5ABA47] transition-colors"
+            className="w-full bg-[#111] border border-[#333] rounded-md px-3 py-2 text-sm text-white focus:outline-none focus:border-[#2196F3] transition-colors"
           >
             <option value="">Any</option>
             {sortedYears.map((y) => (
@@ -131,7 +131,7 @@ export default function ProductFilter({
         <div className="flex items-center gap-2 flex-shrink-0">
           <button
             onClick={applyFilters}
-            className="px-4 py-2 bg-[#5ABA47] text-white text-sm font-medium rounded-md hover:bg-[#348923] transition-colors"
+            className="px-4 py-2 bg-[#2196F3] text-white text-sm font-medium rounded-md hover:bg-[#1976D2] transition-colors"
           >
             Apply
           </button>

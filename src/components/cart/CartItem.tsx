@@ -47,11 +47,11 @@ export default function CartItemRow({
       <div className="flex-1 min-w-0">
         <Link
           href={`/laser-machines-for-sale/${item.slug}`}
-          className="text-white font-medium hover:text-[#5ABA47] transition-colors line-clamp-2 text-sm sm:text-base"
+          className="text-white font-medium hover:text-[#2196F3] transition-colors line-clamp-2 text-sm sm:text-base"
         >
           {item.title}
         </Link>
-        <p className="text-[#5ABA47] font-semibold mt-1">
+        <p className="text-[#2196F3] font-semibold mt-1">
           {formatPrice(item.price)}
         </p>
       </div>

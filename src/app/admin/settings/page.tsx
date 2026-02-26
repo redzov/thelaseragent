@@ -81,7 +81,7 @@ export default function AdminSettingsPage() {
   if (loading) {
     return (
       <div className="flex h-64 items-center justify-center">
-        <div className="h-8 w-8 animate-spin rounded-full border-4 border-[#5ABA47] border-t-transparent" />
+        <div className="h-8 w-8 animate-spin rounded-full border-4 border-[#2196F3] border-t-transparent" />
       </div>
     );
   }
@@ -117,7 +117,7 @@ export default function AdminSettingsPage() {
                     type={field.type}
                     value={settings[field.key] || ""}
                     onChange={(e) => updateSetting(field.key, e.target.value)}
-                    className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm text-gray-900 focus:border-[#5ABA47] focus:outline-none focus:ring-1 focus:ring-[#5ABA47]"
+                    className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm text-gray-900 focus:border-[#2196F3] focus:outline-none focus:ring-1 focus:ring-[#2196F3]"
                     placeholder={field.label}
                   />
                 </div>
@@ -130,7 +130,7 @@ export default function AdminSettingsPage() {
           <button
             type="submit"
             disabled={saving}
-            className="inline-flex items-center gap-2 rounded-md bg-[#5ABA47] px-6 py-2.5 text-sm font-medium text-white transition-colors hover:bg-[#348923] disabled:opacity-50"
+            className="inline-flex items-center gap-2 rounded-md bg-[#2196F3] px-6 py-2.5 text-sm font-medium text-white transition-colors hover:bg-[#1976D2] disabled:opacity-50"
           >
             <Save size={16} />
             {saving ? "Saving..." : "Save Settings"}

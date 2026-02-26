@@ -90,7 +90,7 @@ export default function AdminReviewsPage() {
         <h2 className="text-2xl font-bold text-gray-900">Reviews</h2>
         <Link
           href="/admin/reviews/new"
-          className="inline-flex items-center gap-2 rounded-md bg-[#5ABA47] px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-[#348923]"
+          className="inline-flex items-center gap-2 rounded-md bg-[#2196F3] px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-[#1976D2]"
         >
           <Plus size={16} />
           Add Review
@@ -99,7 +99,7 @@ export default function AdminReviewsPage() {
 
       {loading ? (
         <div className="flex h-48 items-center justify-center">
-          <div className="h-8 w-8 animate-spin rounded-full border-4 border-[#5ABA47] border-t-transparent" />
+          <div className="h-8 w-8 animate-spin rounded-full border-4 border-[#2196F3] border-t-transparent" />
         </div>
       ) : reviews.length === 0 ? (
         <div className="rounded-lg bg-white p-8 text-center text-gray-400 shadow-sm">

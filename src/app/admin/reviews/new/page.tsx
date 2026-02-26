@@ -107,7 +107,7 @@ export default function AdminReviewNewPage() {
                 value={form.authorName}
                 onChange={(e) => updateField("authorName", e.target.value)}
                 required
-                className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm text-gray-900 focus:border-[#5ABA47] focus:outline-none focus:ring-1 focus:ring-[#5ABA47]"
+                className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm text-gray-900 focus:border-[#2196F3] focus:outline-none focus:ring-1 focus:ring-[#2196F3]"
               />
             </div>
             <div>
@@ -117,7 +117,7 @@ export default function AdminReviewNewPage() {
               <select
                 value={form.source}
                 onChange={(e) => updateField("source", e.target.value)}
-                className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm text-gray-900 focus:border-[#5ABA47] focus:outline-none focus:ring-1 focus:ring-[#5ABA47]"
+                className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm text-gray-900 focus:border-[#2196F3] focus:outline-none focus:ring-1 focus:ring-[#2196F3]"
               >
                 <option value="google">Google</option>
                 <option value="yelp">Yelp</option>
@@ -136,7 +136,7 @@ export default function AdminReviewNewPage() {
               onChange={(e) => updateField("text", e.target.value)}
               required
               rows={5}
-              className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm text-gray-900 focus:border-[#5ABA47] focus:outline-none focus:ring-1 focus:ring-[#5ABA47]"
+              className="w-full rounded-md border border-gray-300 px-3 py-2 text-sm text-gray-900 focus:border-[#2196F3] focus:outline-none focus:ring-1 focus:ring-[#2196F3]"
             />
           </div>
 
@@ -202,7 +202,7 @@ export default function AdminReviewNewPage() {
                 type="checkbox"
                 checked={form.isPublished}
                 onChange={(e) => updateField("isPublished", e.target.checked)}
-                className="h-4 w-4 rounded border-gray-300 text-[#5ABA47] focus:ring-[#5ABA47]"
+                className="h-4 w-4 rounded border-gray-300 text-[#2196F3] focus:ring-[#2196F3]"
               />
               Published
             </label>
@@ -213,7 +213,7 @@ export default function AdminReviewNewPage() {
           <button
             type="submit"
             disabled={saving}
-            className="inline-flex items-center gap-2 rounded-md bg-[#5ABA47] px-6 py-2.5 text-sm font-medium text-white transition-colors hover:bg-[#348923] disabled:opacity-50"
+            className="inline-flex items-center gap-2 rounded-md bg-[#2196F3] px-6 py-2.5 text-sm font-medium text-white transition-colors hover:bg-[#1976D2] disabled:opacity-50"
           >
             <Save size={16} />
             {saving ? "Creating..." : "Create Review"}

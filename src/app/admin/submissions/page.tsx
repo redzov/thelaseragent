@@ -103,7 +103,7 @@ export default function AdminSubmissionsPage() {
             setFilter(e.target.value);
             setPage(1);
           }}
-          className="rounded-md border border-gray-300 px-3 py-2 text-sm text-gray-900 focus:border-[#5ABA47] focus:outline-none focus:ring-1 focus:ring-[#5ABA47]"
+          className="rounded-md border border-gray-300 px-3 py-2 text-sm text-gray-900 focus:border-[#2196F3] focus:outline-none focus:ring-1 focus:ring-[#2196F3]"
         >
           <option value="">All Types</option>
           {formTypes
@@ -119,7 +119,7 @@ export default function AdminSubmissionsPage() {
       <div className="overflow-hidden rounded-lg bg-white shadow-sm">
         {loading ? (
           <div className="flex h-48 items-center justify-center">
-            <div className="h-8 w-8 animate-spin rounded-full border-4 border-[#5ABA47] border-t-transparent" />
+            <div className="h-8 w-8 animate-spin rounded-full border-4 border-[#2196F3] border-t-transparent" />
           </div>
         ) : (
           <>

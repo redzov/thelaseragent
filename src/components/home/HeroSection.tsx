@@ -18,7 +18,7 @@ export default function HeroSection() {
         {/* Dual heading: white + green */}
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold leading-tight mb-6">
           <span className="text-white">The Industry Leader in </span>
-          <span className="text-[#5ABA47]">
+          <span className="text-[#2196F3]">
             Used Cosmetic, Medical and Aesthetic Lasers For Sale
           </span>
         </h1>

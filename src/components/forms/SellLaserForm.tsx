@@ -147,7 +147,7 @@ export default function SellLaserForm() {
         <div
           className={`p-3 rounded-lg text-center text-sm ${
             submitState.type === "success"
-              ? "bg-[#5ABA47]/10 text-[#5ABA47]"
+              ? "bg-[#2196F3]/10 text-[#2196F3]"
               : "bg-red-500/10 text-red-400"
           }`}
         >

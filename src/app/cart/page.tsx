@@ -15,7 +15,7 @@ export default function CartPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         {/* Header */}
         <div className="flex items-center gap-3 mb-8">
-          <ShoppingCart className="w-7 h-7 text-[#5ABA47]" />
+          <ShoppingCart className="w-7 h-7 text-[#2196F3]" />
           <h1 className="text-3xl font-bold text-white">Shopping Cart</h1>
         </div>
 

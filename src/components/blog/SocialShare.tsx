@@ -51,7 +51,7 @@ export default function SocialShare({ url, title }: SocialShareProps) {
               key={link.name}
               href={link.url}
               aria-label={`Share via ${link.name}`}
-              className="flex items-center justify-center w-10 h-10 rounded-full bg-[#1a1a1a] text-gray-400 hover:bg-[#5ABA47]/20 hover:text-[#5ABA47] transition-colors"
+              className="flex items-center justify-center w-10 h-10 rounded-full bg-[#1a1a1a] text-gray-400 hover:bg-[#2196F3]/20 hover:text-[#2196F3] transition-colors"
             >
               <Icon className="w-4 h-4" />
             </a>
@@ -60,7 +60,7 @@ export default function SocialShare({ url, title }: SocialShareProps) {
               key={link.name}
               onClick={() => openShareWindow(link.url)}
               aria-label={`Share on ${link.name}`}
-              className="flex items-center justify-center w-10 h-10 rounded-full bg-[#1a1a1a] text-gray-400 hover:bg-[#5ABA47]/20 hover:text-[#5ABA47] transition-colors cursor-pointer"
+              className="flex items-center justify-center w-10 h-10 rounded-full bg-[#1a1a1a] text-gray-400 hover:bg-[#2196F3]/20 hover:text-[#2196F3] transition-colors cursor-pointer"
             >
               <Icon className="w-4 h-4" />
             </button>

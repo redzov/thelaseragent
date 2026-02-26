@@ -23,7 +23,7 @@ export default function ProductCard({
 }: ProductCardProps) {
   return (
     <Link href={`/product/${slug}`} className="group block">
-      <article className="bg-[#1a1a1a] rounded-lg overflow-hidden border border-transparent transition-all duration-300 group-hover:scale-[1.02] group-hover:border-[#5ABA47]/40 group-hover:shadow-[0_0_20px_rgba(90,186,71,0.15)]">
+      <article className="bg-[#1a1a1a] rounded-lg overflow-hidden border border-transparent transition-all duration-300 group-hover:scale-[1.02] group-hover:border-[#2196F3]/40 group-hover:shadow-[0_0_20px_rgba(90,186,71,0.15)]">
         {/* Image */}
         <div className="relative aspect-square bg-[#111]">
           {primaryImage ? (
@@ -70,7 +70,7 @@ export default function ProductCard({
           {/* Price */}
           <div className="flex items-center justify-between">
             {callForPrice || price === 0 ? (
-              <span className="text-[#5ABA47] font-semibold text-sm">
+              <span className="text-[#2196F3] font-semibold text-sm">
                 Call for Price
               </span>
             ) : (
@@ -82,7 +82,7 @@ export default function ProductCard({
 
           {/* CTA */}
           <div className="mt-3 pt-3 border-t border-[#333]">
-            <span className="text-[#5ABA47] text-sm font-medium group-hover:underline inline-flex items-center gap-1">
+            <span className="text-[#2196F3] text-sm font-medium group-hover:underline inline-flex items-center gap-1">
               Learn More
               <svg
                 className="w-4 h-4 transition-transform group-hover:translate-x-1"

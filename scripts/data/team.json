@@ -1,43 +1,29 @@
 [
   {
-    "name": "Drew S.",
-    "title": "President",
-    "photo": "https://spcdn.shortpixel.ai/spio/ret_img,q_cdnize,to_webp,s_webp/www.thelaseragent.com/wp-content/uploads/2024/09/DrewS.webp",
-    "email": "ds@thelaseragent.com",
-    "linkedIn": "https://www.linkedin.com/authwall?trk=gf&trkInfo=AQFVkSXFWsqdawAAAYHNb0Nw1olBkT_k7OxoaD6LwmWc8GI2WK6xphf4vXkpH0kooNwsxR3xBDVBPYsNWzgrlYsVdBZxMsI9-QrKpu9wfZ8909ufFI8uXScyw5EECoD0conI_ng=&original_referer=https://www.thelaseragent.com/&sessionRedirect=https%3A%2F%2Fwww.linkedin.com%2Fin%2Fdrew-shafer-3a582967%2F"
+    "name": "John C.",
+    "title": "President & CEO",
+    "photo": "/images/team/john-c.png",
+    "email": null,
+    "linkedIn": null
   },
   {
-    "name": "Deon S.",
-    "title": "Vice President",
-    "photo": "https://spcdn.shortpixel.ai/spio/ret_img,q_cdnize,to_webp,s_webp/www.thelaseragent.com/wp-content/uploads/2022/08/Deon-S-rotated.jpg",
-    "email": "deon@thelaseragent.com",
-    "linkedIn": "https://www.linkedin.com/authwall?trk=gf&trkInfo=AQGdfQ-vJ9IlxwAAAYHNc-rYmSoS00vf1PH8dB8oCc2Cy1wTAAeQEI7X7fgwqT-LeVx1udFGFNfOyq2ZF-73rgXOf6RZS1Xz1ALB05izReRiUiViQ480xiIc05VK5X32JwiaxtQ=&original_referer=https://www.thelaseragent.com/&sessionRedirect=https%3A%2F%2Fwww.linkedin.com%2Fin%2Fdeon-shafer-59503b57%2F"
+    "name": "Kylie T.",
+    "title": "Sales Specialist",
+    "photo": "/images/team/kylie-t.png",
+    "email": null,
+    "linkedIn": null
+  },
+  {
+    "name": "Jason A.",
+    "title": "Sales Specialist",
+    "photo": "/images/team/jason-a.png",
+    "email": null,
+    "linkedIn": null
   },
   {
     "name": "Liz C.",
     "title": "Office Manager",
-    "photo": "https://spcdn.shortpixel.ai/spio/ret_img,q_cdnize,to_webp,s_webp/www.thelaseragent.com/wp-content/uploads/2024/09/liz.webp",
-    "email": "liz@thelaseragent.com",
-    "linkedIn": null
-  },
-  {
-    "name": "Constantin S.",
-    "title": "Delivery & Pick Up Expert",
-    "photo": "https://spcdn.shortpixel.ai/spio/ret_img,q_cdnize,to_webp,s_webp/www.thelaseragent.com/wp-content/uploads/2024/09/ConstantinS.webp",
-    "email": "deon@thelaseragent.com",
-    "linkedIn": null
-  },
-  {
-    "name": "Josh W.",
-    "title": "Service Technician",
-    "photo": "https://spcdn.shortpixel.ai/spio/ret_img,q_cdnize,to_webp,s_webp/www.thelaseragent.com/wp-content/uploads/2022/08/Josh-W-rotated.jpg",
-    "email": "josh@thelaseragent.com",
-    "linkedIn": null
-  },
-  {
-    "name": "Pearl",
-    "title": "Mascot",
-    "photo": "https://spcdn.shortpixel.ai/spio/ret_img,q_cdnize,to_webp,s_webp/www.thelaseragent.com/wp-content/uploads/2022/08/Pearl-rotated.jpg",
+    "photo": "/images/team/liz-c.png",
     "email": null,
     "linkedIn": null
   }

@@ -71,7 +71,7 @@ export default function LaserRepairPage() {
           </p>
           <Link
             href="/contact"
-            className="inline-block bg-[#5ABA47] text-white px-8 py-3 rounded-[20px] font-medium hover:bg-[#348923] transition-colors"
+            className="inline-block bg-[#2196F3] text-white px-8 py-3 rounded-[20px] font-medium hover:bg-[#1976D2] transition-colors"
           >
             Contact Us
           </Link>

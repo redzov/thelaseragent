@@ -88,7 +88,7 @@ export default function BlogPagination({
           return isActive ? (
             <span
               key={page}
-              className="w-10 h-10 flex items-center justify-center rounded-lg text-sm font-medium bg-[#5ABA47] text-white"
+              className="w-10 h-10 flex items-center justify-center rounded-lg text-sm font-medium bg-[#2196F3] text-white"
               aria-current="page"
             >
               {page}

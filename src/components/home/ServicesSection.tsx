@@ -52,11 +52,11 @@ export default function ServicesSection() {
             return (
               <div
                 key={service.title}
-                className="group bg-[#1a1a1a] rounded-lg p-6 border border-transparent hover:border-[#5ABA47] transition-all duration-300"
+                className="group bg-[#1a1a1a] rounded-lg p-6 border border-transparent hover:border-[#2196F3] transition-all duration-300"
               >
                 {/* Icon */}
                 <div className="mb-4">
-                  <Icon className="w-12 h-12 text-[#5ABA47]" strokeWidth={1.5} />
+                  <Icon className="w-12 h-12 text-[#2196F3]" strokeWidth={1.5} />
                 </div>
 
                 {/* Title */}
@@ -72,7 +72,7 @@ export default function ServicesSection() {
                 {/* Link */}
                 <Link
                   href={service.link}
-                  className="inline-flex items-center text-[#5ABA47] text-sm font-medium hover:underline"
+                  className="inline-flex items-center text-[#2196F3] text-sm font-medium hover:underline"
                 >
                   {service.linkText}
                   <svg

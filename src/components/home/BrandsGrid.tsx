@@ -35,7 +35,7 @@ export default function BrandsGrid() {
             <Link
               key={brand.name}
               href={brand.href}
-              className="text-center py-4 px-3 rounded-lg bg-[#1a1a1a] text-[#5ABA47] font-medium hover:underline hover:bg-[#1a1a1a]/80 transition-all duration-200"
+              className="text-center py-4 px-3 rounded-lg bg-[#1a1a1a] text-[#2196F3] font-medium hover:underline hover:bg-[#1a1a1a]/80 transition-all duration-200"
             >
               {brand.name}
             </Link>

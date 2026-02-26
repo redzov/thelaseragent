@@ -67,7 +67,7 @@ export default function AdminLoginPage() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               required
-              className="w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-400 focus:border-[#5ABA47] focus:outline-none focus:ring-1 focus:ring-[#5ABA47]"
+              className="w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-400 focus:border-[#2196F3] focus:outline-none focus:ring-1 focus:ring-[#2196F3]"
               placeholder="admin@example.com"
             />
           </div>
@@ -85,7 +85,7 @@ export default function AdminLoginPage() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               required
-              className="w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-400 focus:border-[#5ABA47] focus:outline-none focus:ring-1 focus:ring-[#5ABA47]"
+              className="w-full rounded-md border border-gray-300 px-3 py-2 text-gray-900 placeholder-gray-400 focus:border-[#2196F3] focus:outline-none focus:ring-1 focus:ring-[#2196F3]"
               placeholder="Enter your password"
             />
           </div>
@@ -93,7 +93,7 @@ export default function AdminLoginPage() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full rounded-md bg-[#5ABA47] px-4 py-2.5 font-medium text-white transition-colors hover:bg-[#348923] disabled:opacity-50"
+            className="w-full rounded-md bg-[#2196F3] px-4 py-2.5 font-medium text-white transition-colors hover:bg-[#1976D2] disabled:opacity-50"
           >
             {loading ? "Signing in..." : "Sign In"}
           </button>

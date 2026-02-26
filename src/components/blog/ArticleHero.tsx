@@ -60,7 +60,7 @@ export default function ArticleHero({
               <Link
                 key={blogCategory.slug}
                 href={`/category/${blogCategory.slug}`}
-                className="inline-block px-3 py-1 text-xs font-medium uppercase tracking-wide bg-[#5ABA47]/20 text-[#5ABA47] rounded-full hover:bg-[#5ABA47]/30 transition-colors"
+                className="inline-block px-3 py-1 text-xs font-medium uppercase tracking-wide bg-[#2196F3]/20 text-[#2196F3] rounded-full hover:bg-[#2196F3]/30 transition-colors"
               >
                 {blogCategory.name}
               </Link>

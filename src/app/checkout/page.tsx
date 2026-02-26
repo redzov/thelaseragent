@@ -98,7 +98,7 @@ export default function CheckoutPage() {
               </Link>
               <Link
                 href="/contact-us"
-                className="block text-sm text-[#5ABA47] hover:underline mt-2"
+                className="block text-sm text-[#2196F3] hover:underline mt-2"
               >
                 Contact us to complete your order
               </Link>
@@ -107,7 +107,7 @@ export default function CheckoutPage() {
         ) : (
           /* Loading State */
           <div className="space-y-6">
-            <Loader2 className="w-12 h-12 text-[#5ABA47] animate-spin mx-auto" />
+            <Loader2 className="w-12 h-12 text-[#2196F3] animate-spin mx-auto" />
             <h1 className="text-2xl font-bold text-white">
               Redirecting to Checkout
             </h1>

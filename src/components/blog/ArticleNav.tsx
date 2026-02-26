@@ -19,14 +19,14 @@ export default function ArticleNav({ prev, next }: ArticleNavProps) {
       {prev ? (
         <Link
           href={`/article/${prev.slug}`}
-          className="group flex items-center gap-3 p-4 rounded-lg bg-[#1a1a1a] border border-transparent hover:border-[#5ABA47]/40 hover:bg-[#252525] transition-all"
+          className="group flex items-center gap-3 p-4 rounded-lg bg-[#1a1a1a] border border-transparent hover:border-[#2196F3]/40 hover:bg-[#252525] transition-all"
         >
-          <ArrowLeft className="w-5 h-5 text-[#5ABA47] flex-shrink-0 transition-transform group-hover:-translate-x-1" />
+          <ArrowLeft className="w-5 h-5 text-[#2196F3] flex-shrink-0 transition-transform group-hover:-translate-x-1" />
           <div className="min-w-0">
             <span className="text-xs text-gray-500 uppercase tracking-wide block mb-1">
               Previous
             </span>
-            <span className="text-white text-sm font-medium line-clamp-2 group-hover:text-[#5ABA47] transition-colors">
+            <span className="text-white text-sm font-medium line-clamp-2 group-hover:text-[#2196F3] transition-colors">
               {cleanTitle(prev.title)}
             </span>
           </div>
@@ -39,17 +39,17 @@ export default function ArticleNav({ prev, next }: ArticleNavProps) {
       {next ? (
         <Link
           href={`/article/${next.slug}`}
-          className="group flex items-center justify-end gap-3 p-4 rounded-lg bg-[#1a1a1a] border border-transparent hover:border-[#5ABA47]/40 hover:bg-[#252525] transition-all text-right"
+          className="group flex items-center justify-end gap-3 p-4 rounded-lg bg-[#1a1a1a] border border-transparent hover:border-[#2196F3]/40 hover:bg-[#252525] transition-all text-right"
         >
           <div className="min-w-0">
             <span className="text-xs text-gray-500 uppercase tracking-wide block mb-1">
               Next
             </span>
-            <span className="text-white text-sm font-medium line-clamp-2 group-hover:text-[#5ABA47] transition-colors">
+            <span className="text-white text-sm font-medium line-clamp-2 group-hover:text-[#2196F3] transition-colors">
               {cleanTitle(next.title)}
             </span>
           </div>
-          <ArrowRight className="w-5 h-5 text-[#5ABA47] flex-shrink-0 transition-transform group-hover:translate-x-1" />
+          <ArrowRight className="w-5 h-5 text-[#2196F3] flex-shrink-0 transition-transform group-hover:translate-x-1" />
         </Link>
       ) : (
         <div />

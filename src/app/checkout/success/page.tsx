@@ -15,8 +15,8 @@ export default function CheckoutSuccessPage() {
       <CartClearer />
       <div className="max-w-lg mx-auto px-4 py-20 text-center">
         {/* Success Icon */}
-        <div className="w-20 h-20 bg-[#5ABA47]/10 rounded-full flex items-center justify-center mx-auto mb-6">
-          <CheckCircle className="w-10 h-10 text-[#5ABA47]" />
+        <div className="w-20 h-20 bg-[#2196F3]/10 rounded-full flex items-center justify-center mx-auto mb-6">
+          <CheckCircle className="w-10 h-10 text-[#2196F3]" />
         </div>
 
         {/* Heading */}
@@ -39,21 +39,21 @@ export default function CheckoutSuccessPage() {
           </h2>
           <ul className="space-y-3 text-[#c9c9c9] text-sm">
             <li className="flex items-start gap-2">
-              <span className="text-[#5ABA47] font-bold mt-0.5">1.</span>
+              <span className="text-[#2196F3] font-bold mt-0.5">1.</span>
               <span>
                 You will receive an order confirmation email with a summary of
                 your purchase.
               </span>
             </li>
             <li className="flex items-start gap-2">
-              <span className="text-[#5ABA47] font-bold mt-0.5">2.</span>
+              <span className="text-[#2196F3] font-bold mt-0.5">2.</span>
               <span>
                 Our team will prepare your laser equipment for shipment and
                 perform quality checks.
               </span>
             </li>
             <li className="flex items-start gap-2">
-              <span className="text-[#5ABA47] font-bold mt-0.5">3.</span>
+              <span className="text-[#2196F3] font-bold mt-0.5">3.</span>
               <span>
                 You will receive shipping and tracking details once your order is
                 dispatched.

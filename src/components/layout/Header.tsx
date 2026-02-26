@@ -11,7 +11,7 @@ import CartIcon from "@/components/cart/CartIcon";
 function SearchButton() {
   return (
     <button
-      className="p-2 text-gray-700 hover:text-[#5ABA47] transition-colors"
+      className="p-2 text-gray-700 hover:text-[#2196F3] transition-colors"
       aria-label="Search"
     >
       <Search className="w-5 h-5" />

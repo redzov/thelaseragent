@@ -62,7 +62,7 @@ export default function CartSummary({ items }: CartSummaryProps) {
         <div className="border-t border-[#333] pt-3">
           <div className="flex justify-between items-center">
             <span className="text-lg font-semibold text-white">Total</span>
-            <span className="text-xl font-bold text-[#5ABA47]">
+            <span className="text-xl font-bold text-[#2196F3]">
               {formatPrice(subtotal)}
             </span>
           </div>
@@ -80,7 +80,7 @@ export default function CartSummary({ items }: CartSummaryProps) {
 
         <Link
           href="/laser-machines-for-sale"
-          className="flex items-center justify-center gap-2 text-sm text-[#c9c9c9] hover:text-[#5ABA47] transition-colors py-2"
+          className="flex items-center justify-center gap-2 text-sm text-[#c9c9c9] hover:text-[#2196F3] transition-colors py-2"
         >
           <ShoppingBag className="w-4 h-4" />
           Continue Shopping
