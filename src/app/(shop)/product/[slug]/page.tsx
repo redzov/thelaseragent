@@ -7,25 +7,21 @@ import ProductActions from "@/components/product/ProductActions";
 import RelatedProducts from "@/components/product/RelatedProducts";
 import {
   getProductBySlug,
-  getAllProductSlugs,
   getRelatedProducts,
 } from "@/lib/products";
 import { SITE_NAME, SITE_URL } from "@/lib/constants";
 
+export const dynamic = "force-dynamic";
+
 interface PageProps {
   params: Promise<{ slug: string }>;
-}
-
-export async function generateStaticParams() {
-  const slugs = getAllProductSlugs();
-  return slugs.map((slug) => ({ slug }));
 }
 
 export async function generateMetadata({
   params,
 }: PageProps): Promise<Metadata> {
   const { slug } = await params;
-  const product = getProductBySlug(slug);
+  const product = await getProductBySlug(slug);
 
   if (!product) {
     return {
@@ -37,7 +33,7 @@ export async function generateMetadata({
   const description =
     product.metaDescription ||
     product.description ||
-    `Buy used ${product.title} from The Laser Agent.`;
+    `Buy used ${product.title} from ${SITE_NAME}.`;
   const ogImage = product.ogImage || undefined;
 
   return {
@@ -61,13 +57,13 @@ export async function generateMetadata({
 
 export default async function ProductPage({ params }: PageProps) {
   const { slug } = await params;
-  const product = getProductBySlug(slug);
+  const product = await getProductBySlug(slug);
 
   if (!product) {
     notFound();
   }
 
-  const relatedProducts = getRelatedProducts(slug);
+  const relatedProducts = await getRelatedProducts(slug);
 
   const galleryImages = product.images
     .sort((a, b) => a.sortOrder - b.sortOrder)

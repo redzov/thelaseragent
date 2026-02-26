@@ -47,10 +47,10 @@ export default function TermsAndConditionsPage() {
             />
           ) : (
             <div className="prose-dark">
-              <h2>Welcome to The Laser Agent, Inc</h2>
+              <h2>Welcome to Phoenix Aesthetics</h2>
               <p>
-                These terms and conditions outline the rules and regulations for the use of The
-                Laser Agent, Inc website.
+                These terms and conditions outline the rules and regulations for the use of the
+                Phoenix Aesthetics website.
               </p>
             </div>
           )}

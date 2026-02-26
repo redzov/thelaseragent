@@ -43,3 +43,14 @@ export type ContactFormValues = z.infer<typeof contactFormSchema>;
 export type GetPriceFormValues = z.infer<typeof getPriceFormSchema>;
 export type MakeOfferFormValues = z.infer<typeof makeOfferFormSchema>;
 export type SellLaserFormValues = z.infer<typeof sellLaserFormSchema>;
+
+export const productInquirySchema = z.object({
+  name: z.string().min(2, "Name must be at least 2 characters"),
+  email: z.string().email("Please enter a valid email address"),
+  phone: z.string().min(7, "Please enter a valid phone number"),
+  message: z.string().optional(),
+  productSlug: z.string().min(1),
+  productTitle: z.string().min(1),
+});
+
+export type ProductInquiryValues = z.infer<typeof productInquirySchema>;

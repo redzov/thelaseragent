@@ -25,7 +25,7 @@ function truncateExcerpt(text: string, maxLength: number): string {
 
 // Strip " - The laser Agent" suffix from titles for cleaner display
 function cleanTitle(title: string): string {
-  return title.replace(/ - The laser Agent$/i, "").replace(/ - The Laser Agent$/i, "");
+  return title.replace(/ - The [Ll]aser Agent$/i, "").replace(/ - Phoenix Aesthetics$/i, "");
 }
 
 export default function RecentBlogPosts() {

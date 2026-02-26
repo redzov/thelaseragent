@@ -2,7 +2,6 @@ import type { MetadataRoute } from "next";
 import { getAllProductSlugs } from "@/lib/products";
 import { getAllArticleSlugs } from "@/lib/articles";
 import { SITE_URL } from "@/lib/constants";
-import categoriesData from "../../scripts/data/categories.json";
 
 type ChangeFrequency =
   | "always"
@@ -13,7 +12,9 @@ type ChangeFrequency =
   | "yearly"
   | "never";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export const dynamic = "force-dynamic";
+
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const baseUrl = SITE_URL;
 
   // Static pages
@@ -67,12 +68,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.5,
     },
     {
-      url: `${baseUrl}/financing`,
-      lastModified: new Date(),
-      changeFrequency: "monthly" as ChangeFrequency,
-      priority: 0.5,
-    },
-    {
       url: `${baseUrl}/shipping-delivery`,
       lastModified: new Date(),
       changeFrequency: "monthly" as ChangeFrequency,
@@ -80,30 +75,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
     {
       url: `${baseUrl}/laser-faqs`,
-      lastModified: new Date(),
-      changeFrequency: "monthly" as ChangeFrequency,
-      priority: 0.5,
-    },
-    {
-      url: `${baseUrl}/customer-education`,
-      lastModified: new Date(),
-      changeFrequency: "monthly" as ChangeFrequency,
-      priority: 0.5,
-    },
-    {
-      url: `${baseUrl}/videos`,
-      lastModified: new Date(),
-      changeFrequency: "monthly" as ChangeFrequency,
-      priority: 0.5,
-    },
-    {
-      url: `${baseUrl}/medical-laser-supplies`,
-      lastModified: new Date(),
-      changeFrequency: "monthly" as ChangeFrequency,
-      priority: 0.5,
-    },
-    {
-      url: `${baseUrl}/training`,
       lastModified: new Date(),
       changeFrequency: "monthly" as ChangeFrequency,
       priority: 0.5,
@@ -122,8 +93,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
-  // Product pages
-  const productSlugs = getAllProductSlugs();
+  // Product pages (from database)
+  const productSlugs = await getAllProductSlugs();
   const productPages: MetadataRoute.Sitemap = productSlugs.map((slug) => ({
     url: `${baseUrl}/product/${slug}`,
     lastModified: new Date(),
@@ -140,19 +111,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.7,
   }));
 
-  // Category / Brand pages (from categories.json)
-  const categories = categoriesData as { slug: string; type: string }[];
-  const categoryPages: MetadataRoute.Sitemap = categories.map((cat) => ({
-    url: `${baseUrl}/${cat.slug}`,
-    lastModified: new Date(),
-    changeFrequency: "weekly" as ChangeFrequency,
-    priority: 0.7,
-  }));
-
   return [
     ...staticPages,
     ...productPages,
     ...articlePages,
-    ...categoryPages,
   ];
 }

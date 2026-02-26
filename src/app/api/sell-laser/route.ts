@@ -1,5 +1,7 @@
 import { NextResponse } from "next/server";
 import { sellLaserFormSchema } from "@/lib/validators";
+import { prisma } from "@/lib/prisma";
+import { sendTelegramNotification } from "@/lib/telegram";
 
 export async function POST(request: Request) {
   try {
@@ -14,14 +16,25 @@ export async function POST(request: Request) {
       );
     }
 
-    const data = result.data;
+    const { firstName, lastName, email, phone, brand, productName, lookingTo, message } =
+      result.data;
 
-    // TODO: Replace with Resend email integration
-    console.log("[Sell Laser Form Submission]", data);
+    await prisma.formSubmission.create({
+      data: {
+        formType: "sell-laser",
+        email,
+        data: { firstName, lastName, email, phone, brand, productName, lookingTo, message },
+      },
+    });
+
+    await sendTelegramNotification(
+      `🔔 New Sell Laser Inquiry\n\nName: ${firstName} ${lastName}\nEmail: ${email}\nPhone: ${phone}\nBrand: ${brand}\nProduct: ${productName}\nLooking To: ${lookingTo}\nMessage: ${message || "N/A"}`
+    );
 
     return NextResponse.json({
       success: true,
-      message: "Thank you! We'll review your submission and get back to you shortly.",
+      message:
+        "Thank you! We'll review your submission and get back to you shortly.",
     });
   } catch {
     return NextResponse.json(

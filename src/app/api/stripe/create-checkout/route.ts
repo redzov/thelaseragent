@@ -42,7 +42,7 @@ export async function POST(request: NextRequest) {
       }
     }
 
-    const origin = request.headers.get("origin") || "https://www.thelaseragent.com";
+    const origin = request.headers.get("origin") || process.env.NEXT_PUBLIC_SITE_URL || "https://www.phoenixaesthetics.com";
 
     const lineItems = body.items.map((item) => ({
       price_data: {

@@ -1,42 +1,12 @@
-export const SITE_NAME = "The Laser Agent";
-export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.thelaseragent.com";
-export const PHONE_PRIMARY = "+1-317-570-0448";
-export const PHONE_PRIMARY_TEL = "tel:+13175700448";
-export const PHONE_BEVERLY_HILLS = "(463) 222-2155";
-export const PHONE_BEVERLY_HILLS_TEL = "tel:+14632222155";
-export const PHONE_NEW_YORK = "(315) 812-3622";
-export const PHONE_NEW_YORK_TEL = "tel:+13158123622";
+export const SITE_NAME = "Phoenix Aesthetics";
+export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.phoenixaesthetics.com";
 
 export const SOCIAL_LINKS = {
-  facebook: "https://www.facebook.com/thelaseragent/",
-  twitter: "https://twitter.com/TheLaserAgent",
-  instagram: "https://www.instagram.com/thelaseragent/",
-  linkedin: "https://www.linkedin.com/company/thelaseragent",
+  facebook: "",
+  twitter: "",
+  instagram: "",
+  linkedin: "",
 };
-
-export const OFFICES = [
-  {
-    name: "Noblesville HQ",
-    address: "15402 Stoney Creek Way, Noblesville, IN 46060",
-    phone: PHONE_PRIMARY,
-    phoneTel: PHONE_PRIMARY_TEL,
-    mapUrl: "https://maps.app.goo.gl/XQYsVv5FrqzUvpQm7",
-  },
-  {
-    name: "Beverly Hills",
-    address: "8383 Wilshire Blvd #800, Beverly Hills, CA 90211",
-    phone: PHONE_BEVERLY_HILLS,
-    phoneTel: PHONE_BEVERLY_HILLS_TEL,
-    mapUrl: "https://maps.app.goo.gl/iiUqKyaKPbBi43HKA",
-  },
-  {
-    name: "New York",
-    address: "112 W 34th St., New York, NY 10120",
-    phone: PHONE_NEW_YORK,
-    phoneTel: PHONE_NEW_YORK_TEL,
-    mapUrl: "https://maps.app.goo.gl/XJZsKUyTq6BS3SUh7",
-  },
-];
 
 export interface NavItem {
   label: string;
@@ -110,23 +80,13 @@ export const MAIN_NAV: NavItem[] = [
   { label: "SERVICE A LASER", href: "/laser-repair" },
   { label: "DEALS", href: "/deals" },
   { label: "SHIPPING & DELIVERY", href: "/shipping-delivery" },
-  {
-    label: "RESOURCES",
-    href: "#",
-    children: [
-      { label: "Laser FAQs", href: "/laser-faqs" },
-      { label: "Customer Education", href: "/customer-education" },
-      { label: "Videos", href: "/videos" },
-      { label: "Medical Laser Supplies", href: "/medical-laser-supplies" },
-      { label: "Training", href: "/training" },
-      { label: "Financing", href: "/financing" },
-    ] as NavItem[],
-  },
+  { label: "LASER FAQs", href: "/laser-faqs" },
   {
     label: "CONTACT US",
     href: "/contact",
     children: [
       { label: "Meet The Team", href: "/meet-the-team" },
+      { label: "Customer Reviews", href: "/customer-reviews" },
     ] as NavItem[],
   },
 ];

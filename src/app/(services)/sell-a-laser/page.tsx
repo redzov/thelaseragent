@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { SITE_NAME, PHONE_PRIMARY, PHONE_PRIMARY_TEL } from "@/lib/constants";
+import { SITE_NAME } from "@/lib/constants";
 import SellLaserForm from "@/components/forms/SellLaserForm";
 
 export const metadata: Metadata = {
@@ -44,11 +44,7 @@ export default function SellALaserPage() {
               and overall cosmetic condition.
             </p>
             <p>
-              Have questions? Call us directly at{" "}
-              <a href={PHONE_PRIMARY_TEL} className="text-[#5ABA47]">
-                {PHONE_PRIMARY}
-              </a>{" "}
-              or fill out the form below to get started.
+              Have questions? Fill out the form below to get started or reach out through our contact page.
             </p>
           </div>
         </div>

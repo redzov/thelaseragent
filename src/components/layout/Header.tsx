@@ -43,7 +43,7 @@ export default function Header() {
           <Link href="/" className="flex-shrink-0">
             <Image
               src="/images/site/logo.png"
-              alt="The Laser Agent"
+              alt="Phoenix Aesthetics"
               width={64}
               height={52}
               className="w-auto h-[52px]"

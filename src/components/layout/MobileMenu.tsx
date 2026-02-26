@@ -6,13 +6,12 @@ import {
   Menu,
   X,
   ChevronDown,
-  Phone,
   Facebook,
   Instagram,
   Twitter,
   Linkedin,
 } from "lucide-react";
-import { MAIN_NAV, PHONE_PRIMARY, PHONE_PRIMARY_TEL, SOCIAL_LINKS, isNavGroup } from "@/lib/constants";
+import { MAIN_NAV, SOCIAL_LINKS, isNavGroup } from "@/lib/constants";
 import type { NavItem, NavGroup } from "@/lib/constants";
 
 function AccordionItem({ item, onClose }: { item: NavItem; onClose: () => void }) {
@@ -145,15 +144,8 @@ export default function MobileMenu() {
           ))}
         </div>
 
-        {/* Bottom: Phone + Social */}
+        {/* Bottom: Social */}
         <div className="absolute bottom-0 left-0 right-0 border-t border-[#222] bg-[#0a0a0a] px-6 py-4">
-          <a
-            href={PHONE_PRIMARY_TEL}
-            className="flex items-center gap-2 text-sm text-gray-400 hover:text-primary mb-3 transition-colors"
-          >
-            <Phone className="w-4 h-4" />
-            <span>{PHONE_PRIMARY}</span>
-          </a>
           <div className="flex items-center gap-4">
             <a
               href={SOCIAL_LINKS.facebook}

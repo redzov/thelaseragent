@@ -66,7 +66,7 @@ export default function WhyChooseUsSection() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section title */}
         <h2 className="text-3xl sm:text-4xl font-bold text-white text-center mb-14">
-          Why Choose The Laser Agent?
+          Why Choose Phoenix Aesthetics?
         </h2>
 
         {/* Grid */}

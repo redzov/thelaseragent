@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { getStaticPageBySlug } from "@/lib/static-pages";
-import { SITE_NAME, PHONE_PRIMARY, PHONE_PRIMARY_TEL } from "@/lib/constants";
+import { SITE_NAME } from "@/lib/constants";
 import sanitizeHtml from "sanitize-html";
 
 const page = getStaticPageBySlug("laser-repair");
@@ -51,7 +51,7 @@ export default function LaserRepairPage() {
             <div className="prose-dark">
               <h2>Our Laser Repair Service for All Types of Laser Machines</h2>
               <p>
-                The Laser Agent offers cosmetic and medical laser repair service from major
+                Phoenix Aesthetics offers cosmetic and medical laser repair service from major
                 manufacturers. We offer preventative maintenance, parts, repairs, refurbishment,
                 alignment, calibration and optics.
               </p>
@@ -67,11 +67,7 @@ export default function LaserRepairPage() {
             Need Your Laser Serviced?
           </h2>
           <p className="text-[#c9c9c9] mb-6">
-            Call us at{" "}
-            <a href={PHONE_PRIMARY_TEL} className="text-[#5ABA47] hover:underline">
-              {PHONE_PRIMARY}
-            </a>{" "}
-            or reach out through our contact form to discuss your repair needs.
+            Reach out through our contact form to discuss your repair needs.
           </p>
           <Link
             href="/contact"

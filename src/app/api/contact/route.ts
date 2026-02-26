@@ -1,5 +1,7 @@
 import { NextResponse } from "next/server";
 import { contactFormSchema } from "@/lib/validators";
+import { prisma } from "@/lib/prisma";
+import { sendTelegramNotification } from "@/lib/telegram";
 
 export async function POST(request: Request) {
   try {
@@ -16,8 +18,17 @@ export async function POST(request: Request) {
 
     const { name, email, phone, message } = result.data;
 
-    // TODO: Replace with Resend email integration
-    console.log("[Contact Form Submission]", { name, email, phone, message });
+    await prisma.formSubmission.create({
+      data: {
+        formType: "contact",
+        email,
+        data: { name, email, phone, message },
+      },
+    });
+
+    await sendTelegramNotification(
+      `🔔 New Contact Form Submission\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone || "N/A"}\nMessage: ${message}`
+    );
 
     return NextResponse.json({
       success: true,

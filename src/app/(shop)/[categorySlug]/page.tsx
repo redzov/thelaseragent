@@ -7,12 +7,13 @@ import ProductFilter from "@/components/product/ProductFilter";
 import Breadcrumbs from "@/components/layout/Breadcrumbs";
 import {
   getProducts,
-  getAllCategorySlugs,
   getCategoryNameBySlug,
   getAllManufacturers,
   getAllYears,
 } from "@/lib/products";
 import { SITE_NAME, SITE_URL } from "@/lib/constants";
+
+export const dynamic = "force-dynamic";
 
 interface PageProps {
   params: Promise<{ categorySlug: string }>;
@@ -24,16 +25,11 @@ interface PageProps {
   }>;
 }
 
-export async function generateStaticParams() {
-  const slugs = getAllCategorySlugs();
-  return slugs.map((categorySlug) => ({ categorySlug }));
-}
-
 export async function generateMetadata({
   params,
 }: PageProps): Promise<Metadata> {
   const { categorySlug } = await params;
-  const categoryName = getCategoryNameBySlug(categorySlug);
+  const categoryName = await getCategoryNameBySlug(categorySlug);
 
   if (!categoryName) {
     return {
@@ -42,7 +38,7 @@ export async function generateMetadata({
   }
 
   const title = `${categoryName} | ${SITE_NAME}`;
-  const description = `Browse our selection of ${categoryName.toLowerCase()}. Quality pre-owned laser equipment from The Laser Agent.`;
+  const description = `Browse our selection of ${categoryName.toLowerCase()}. Quality pre-owned laser equipment from Phoenix Aesthetics.`;
 
   return {
     title,
@@ -61,7 +57,7 @@ export default async function CategoryPage({
 }: PageProps) {
   const { categorySlug } = await params;
   const sp = await searchParams;
-  const categoryName = getCategoryNameBySlug(categorySlug);
+  const categoryName = await getCategoryNameBySlug(categorySlug);
 
   if (!categoryName) {
     notFound();
@@ -72,16 +68,19 @@ export default async function CategoryPage({
   const yearFrom = sp.yearFrom || "";
   const yearTo = sp.yearTo || "";
 
-  const manufacturers = getAllManufacturers();
-  const years = getAllYears();
+  const [manufacturers, years, result] = await Promise.all([
+    getAllManufacturers(),
+    getAllYears(),
+    getProducts({
+      page,
+      category: categorySlug,
+      brand: brand || undefined,
+      yearFrom: yearFrom ? parseInt(yearFrom, 10) : undefined,
+      yearTo: yearTo ? parseInt(yearTo, 10) : undefined,
+    }),
+  ]);
 
-  const { products, total, totalPages } = getProducts({
-    page,
-    category: categorySlug,
-    brand: brand || undefined,
-    yearFrom: yearFrom ? parseInt(yearFrom, 10) : undefined,
-    yearTo: yearTo ? parseInt(yearTo, 10) : undefined,
-  });
+  const { products, total, totalPages } = result;
 
   // Build basePath preserving filters
   const filterParams = new URLSearchParams();

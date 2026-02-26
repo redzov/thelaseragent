@@ -38,7 +38,7 @@ export async function generateMetadata({
   const description =
     article.metaDescription ||
     article.excerpt ||
-    `Read "${cleanedTitle}" on The Laser Agent blog.`;
+    `Read "${cleanedTitle}" on the Phoenix Aesthetics blog.`;
   const ogImage = article.featuredImage || undefined;
 
   return {

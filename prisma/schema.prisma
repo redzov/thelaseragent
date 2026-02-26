@@ -118,7 +118,7 @@ model Article {
   excerpt         String?         @db.Text
   body            String          @db.Text
   featuredImage   String?
-  author          String          @default("The Laser Agent")
+  author          String          @default("Phoenix Aesthetics")
   publishedAt     DateTime
   updatedAt       DateTime        @updatedAt
   metaTitle       String?
@@ -169,11 +169,13 @@ model Review {
   id          Int       @id @default(autoincrement())
   authorName  String
   authorImage String?
+  photo       String?
   rating      Int       @default(5)
   text        String    @db.Text
   source      String    @default("google")
   reviewDate  DateTime?
   sortOrder   Int       @default(0)
+  isPublished Boolean   @default(true)
 }
 
 model StaticPage {
@@ -243,4 +245,10 @@ model FormSubmission {
 
   @@index([formType])
   @@index([createdAt(sort: Desc)])
+}
+
+model SiteSettings {
+  id    Int    @id @default(autoincrement())
+  key   String @unique
+  value String @db.Text
 }

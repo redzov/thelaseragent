@@ -47,7 +47,7 @@ export default function PrivacyPolicyPage() {
             />
           ) : (
             <div className="prose-dark">
-              <h2>Privacy Policy for The Laser Agent, Inc</h2>
+              <h2>Privacy Policy for Phoenix Aesthetics</h2>
               <p>
                 Your privacy is important to us. This policy outlines what we collect, how we
                 collect it, and how we use your personal information.

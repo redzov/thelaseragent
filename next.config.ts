@@ -10,6 +10,10 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: "https",
+        hostname: "lh3.googleusercontent.com",
+      },
+      {
+        protocol: "https",
         hostname: "spcdn.shortpixel.ai",
       },
       {
@@ -32,6 +36,31 @@ const nextConfig: NextConfig = {
       },
       {
         source: "/index.html",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/customer-education",
+        destination: "/laser-faqs",
+        permanent: true,
+      },
+      {
+        source: "/videos",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/medical-laser-supplies",
+        destination: "/laser-machines-for-sale",
+        permanent: true,
+      },
+      {
+        source: "/training",
+        destination: "/",
+        permanent: true,
+      },
+      {
+        source: "/financing",
         destination: "/",
         permanent: true,
       },

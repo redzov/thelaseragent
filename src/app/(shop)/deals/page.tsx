@@ -9,7 +9,9 @@ import {
   getAllManufacturers,
   getAllYears,
 } from "@/lib/products";
-import { SITE_NAME } from "@/lib/constants";
+import { SITE_NAME, SITE_URL } from "@/lib/constants";
+
+export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
   title: `Laser Deals & Special Offers | ${SITE_NAME}`,
@@ -19,7 +21,7 @@ export const metadata: Metadata = {
     title: `Laser Deals & Special Offers | ${SITE_NAME}`,
     description:
       "Discover the best deals on pre-owned cosmetic, medical, and aesthetic laser machines.",
-    url: "https://www.thelaseragent.com/deals",
+    url: `${SITE_URL}/deals`,
   },
 };
 
@@ -39,16 +41,19 @@ export default async function DealsPage({ searchParams }: PageProps) {
   const yearFrom = params.yearFrom || "";
   const yearTo = params.yearTo || "";
 
-  const manufacturers = getAllManufacturers();
-  const years = getAllYears();
+  const [manufacturers, years, result] = await Promise.all([
+    getAllManufacturers(),
+    getAllYears(),
+    getProducts({
+      page,
+      deals: true,
+      brand: brand || undefined,
+      yearFrom: yearFrom ? parseInt(yearFrom, 10) : undefined,
+      yearTo: yearTo ? parseInt(yearTo, 10) : undefined,
+    }),
+  ]);
 
-  const { products, total, totalPages } = getProducts({
-    page,
-    deals: true,
-    brand: brand || undefined,
-    yearFrom: yearFrom ? parseInt(yearFrom, 10) : undefined,
-    yearTo: yearTo ? parseInt(yearTo, 10) : undefined,
-  });
+  const { products, total, totalPages } = result;
 
   // Build basePath preserving filters
   const filterParams = new URLSearchParams();
