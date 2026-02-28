@@ -5,7 +5,7 @@ services:
     build:
       context: ..
       dockerfile: docker/Dockerfile
-    container_name: thelaseragent-app
+    container_name: phoenix-app
     restart: unless-stopped
     depends_on:
       db:
@@ -13,20 +13,22 @@ services:
     env_file:
       - ../.env
     environment:
-      - DATABASE_URL=postgresql://${POSTGRES_USER:-laser}:${POSTGRES_PASSWORD:-password}@db:5432/${POSTGRES_DB:-laseragent}
+      - DATABASE_URL=postgresql://${POSTGRES_USER:-phoenix}:${POSTGRES_PASSWORD:-password}@db:5432/${POSTGRES_DB:-phoenixaesthetics}
       - NODE_ENV=production
     ports:
       - "3000:3000"
+    volumes:
+      - uploads:/app/public/uploads
     networks:
       - app-network
 
   db:
     image: postgres:16-alpine
-    container_name: thelaseragent-db
+    container_name: phoenix-db
     restart: unless-stopped
     environment:
-      POSTGRES_DB: ${POSTGRES_DB:-laseragent}
-      POSTGRES_USER: ${POSTGRES_USER:-laser}
+      POSTGRES_DB: ${POSTGRES_DB:-phoenixaesthetics}
+      POSTGRES_USER: ${POSTGRES_USER:-phoenix}
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-password}
     volumes:
       - pgdata:/var/lib/postgresql/data
@@ -35,14 +37,14 @@ services:
     networks:
       - app-network
     healthcheck:
-      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-laser} -d ${POSTGRES_DB:-laseragent}"]
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER:-phoenix} -d ${POSTGRES_DB:-phoenixaesthetics}"]
       interval: 10s
       timeout: 5s
       retries: 5
 
   nginx:
     image: nginx:alpine
-    container_name: thelaseragent-nginx
+    container_name: phoenix-nginx
     restart: unless-stopped
     depends_on:
       - nextjs
@@ -51,14 +53,15 @@ services:
       - "443:443"
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf:ro
-      # Uncomment for Let's Encrypt SSL:
-      # - ./certbot/conf:/etc/letsencrypt:ro
-      # - ./certbot/www:/var/www/certbot:ro
+      - ./certbot/conf:/etc/letsencrypt:ro
+      - ./certbot/www:/var/www/certbot:ro
     networks:
       - app-network
 
 volumes:
   pgdata:
+    driver: local
+  uploads:
     driver: local
 
 networks:
