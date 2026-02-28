@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { SITE_NAME } from "@/lib/constants";
+import { SITE_NAME, PHONE_NUMBER, PHONE_HREF, EMAIL_ADDRESS } from "@/lib/constants";
+import { Phone, Mail } from "lucide-react";
 import ContactForm from "@/components/forms/ContactForm";
 
 export const metadata: Metadata = {
@@ -21,6 +22,30 @@ export default function ContactPage() {
           <p className="text-[#c9c9c9] text-lg max-w-2xl mx-auto">
             Have a question about buying, selling, or servicing laser equipment? We&apos;re here to help.
           </p>
+        </div>
+      </section>
+
+      {/* Contact Info */}
+      <section className="py-12 bg-black border-b border-[#222]">
+        <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-8">
+            <a
+              href={PHONE_HREF}
+              className="flex items-center gap-3 text-white hover:text-[#2196F3] transition-colors"
+            >
+              <Phone className="w-5 h-5 text-[#2196F3]" />
+              <span className="text-lg font-medium">{PHONE_NUMBER}</span>
+            </a>
+            {EMAIL_ADDRESS && (
+              <a
+                href={`mailto:${EMAIL_ADDRESS}`}
+                className="flex items-center gap-3 text-white hover:text-[#2196F3] transition-colors"
+              >
+                <Mail className="w-5 h-5 text-[#2196F3]" />
+                <span className="text-lg font-medium">{EMAIL_ADDRESS}</span>
+              </a>
+            )}
+          </div>
         </div>
       </section>
 

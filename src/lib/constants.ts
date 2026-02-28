@@ -1,5 +1,9 @@
 export const SITE_NAME = "Phoenix Aesthetics";
 export const SITE_URL = process.env.NEXT_PUBLIC_SITE_URL || "https://www.phoenixaesthetics.com";
+export const PHONE_NUMBER = "(315) 280-9444";
+export const PHONE_HREF = "tel:+13152809444";
+// TODO: Add company email once domain is purchased (e.g. info@phoenixaesthetics.com)
+export const EMAIL_ADDRESS = "";
 
 export const SOCIAL_LINKS = {
   facebook: "https://www.facebook.com/people/Phoenix-Aesthetics/61587218723196/",

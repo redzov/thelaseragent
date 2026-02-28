@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
+import { resolveImageUrl } from "@/lib/products";
 
 export async function GET(request: NextRequest) {
   try {
@@ -30,8 +31,16 @@ export async function GET(request: NextRequest) {
       prisma.product.count({ where }),
     ]);
 
+    const productsWithResolvedImages = products.map((p) => ({
+      ...p,
+      images: p.images.map((img) => ({
+        ...img,
+        url: resolveImageUrl(img.url, p.slug),
+      })),
+    }));
+
     return NextResponse.json({
-      products,
+      products: productsWithResolvedImages,
       total,
       page,
       perPage,

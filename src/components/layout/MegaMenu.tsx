@@ -86,7 +86,7 @@ function NavMenuItem({ item }: { item: NavItem }) {
         href={item.href}
         className={`
           flex items-center gap-1 px-3 py-2 text-[13px] font-medium uppercase tracking-wide
-          text-gray-700 hover:text-[#2196F3] transition-colors whitespace-nowrap
+          text-white hover:text-[#2196F3] transition-colors whitespace-nowrap
           ${isOpen ? "text-[#2196F3]" : ""}
         `}
         onClick={(e) => {

@@ -103,7 +103,7 @@ export default function MobileMenu() {
       {/* Hamburger Button */}
       <button
         onClick={() => setIsOpen(true)}
-        className="p-2 text-gray-700 hover:text-[#2196F3] transition-colors"
+        className="p-2 text-white hover:text-[#2196F3] transition-colors"
         aria-label="Open menu"
       >
         <Menu className="w-6 h-6" />

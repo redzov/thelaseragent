@@ -27,7 +27,7 @@ export async function POST(request: Request) {
     });
 
     await sendTelegramNotification(
-      `🔔 New Contact Form Submission\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone || "N/A"}\nMessage: ${message}`
+      `🔔 New Contact Form Submission\n\nName: ${name}\nEmail: ${email}\nPhone: ${phone || "N/A"}${message ? `\nMessage: ${message}` : ""}`
     );
 
     return NextResponse.json({

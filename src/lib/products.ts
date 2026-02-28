@@ -4,7 +4,7 @@ import { PRODUCTS_PER_PAGE } from "@/lib/constants";
 
 // ---- Helpers ----
 
-function resolveImageUrl(url: string, slug: string): string {
+export function resolveImageUrl(url: string, slug: string): string {
   // Already an absolute URL
   if (url.startsWith("http")) return url;
   // Admin-uploaded images exist locally

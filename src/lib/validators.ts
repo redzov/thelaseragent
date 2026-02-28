@@ -4,7 +4,7 @@ export const contactFormSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
   email: z.string().email("Please enter a valid email address"),
   phone: z.string().optional(),
-  message: z.string().min(10, "Message must be at least 10 characters"),
+  message: z.string().min(10, "Message must be at least 10 characters").optional().or(z.literal("")),
 });
 
 export const getPriceFormSchema = z.object({
@@ -30,7 +30,7 @@ export const sellLaserFormSchema = z.object({
   firstName: z.string().min(2, "First name must be at least 2 characters"),
   lastName: z.string().min(2, "Last name must be at least 2 characters"),
   email: z.string().email("Please enter a valid email address"),
-  phone: z.string().min(7, "Please enter a valid phone number"),
+  phone: z.string().min(6, "Please enter a valid phone number"),
   brand: z.string().min(1, "Please select a brand"),
   productName: z.string().min(2, "Product name must be at least 2 characters"),
   lookingTo: z.enum(["buy", "sell", "trade", "service"], {
@@ -47,7 +47,7 @@ export type SellLaserFormValues = z.infer<typeof sellLaserFormSchema>;
 export const productInquirySchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
   email: z.string().email("Please enter a valid email address"),
-  phone: z.string().min(7, "Please enter a valid phone number"),
+  phone: z.string().min(6, "Please enter a valid phone number"),
   message: z.string().optional(),
   productSlug: z.string().min(1),
   productTitle: z.string().min(1),

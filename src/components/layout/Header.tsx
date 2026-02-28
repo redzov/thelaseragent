@@ -11,7 +11,7 @@ import CartIcon from "@/components/cart/CartIcon";
 function SearchButton() {
   return (
     <button
-      className="p-2 text-gray-700 hover:text-[#2196F3] transition-colors"
+      className="p-2 text-white hover:text-[#2196F3] transition-colors"
       aria-label="Search"
     >
       <Search className="w-5 h-5" />
@@ -33,12 +33,12 @@ export default function Header() {
 
   return (
     <header
-      className={`sticky top-0 z-30 bg-white transition-shadow duration-200 ${
-        hasScrolled ? "shadow-md" : ""
+      className={`sticky top-0 z-30 bg-black border-b border-[#222] transition-shadow duration-200 ${
+        hasScrolled ? "shadow-lg shadow-black/30" : ""
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-[70px]">
+        <div className="flex items-center justify-between h-[80px]">
           {/* Logo */}
           <Link href="/" className="flex-shrink-0">
             <Image

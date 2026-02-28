@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/prisma";
+import { resolveImageUrl } from "@/lib/products";
 
 export async function GET(
   _request: NextRequest,
@@ -22,7 +23,15 @@ export async function GET(
       );
     }
 
-    return NextResponse.json(product);
+    const productWithResolvedImages = {
+      ...product,
+      images: product.images.map((img) => ({
+        ...img,
+        url: resolveImageUrl(img.url, product.slug),
+      })),
+    };
+
+    return NextResponse.json(productWithResolvedImages);
   } catch {
     return NextResponse.json(
       { error: "Failed to fetch product" },
